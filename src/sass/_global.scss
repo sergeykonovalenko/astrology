@@ -1,0 +1,45 @@
+html {
+    box-sizing: border-box;
+}
+
+html *, html ::after, html ::before {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+picture {
+    display: block;
+}
+
+input,
+select,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 0;
+    color: #000;
+    outline: none;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
