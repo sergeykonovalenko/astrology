@@ -1,0 +1,89 @@
+.language-switch {
+    @include reset-list;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 82px;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.language-switch a {
+    color: #fff;
+}
+
+.language-switch .menu-item-has-children {
+    display: flex;
+    align-items: center;
+}
+
+.language-switch .menu-item-has-children > a {
+    margin-right: 14px;
+}
+
+.language-switch .menu-item-has-children > a:hover {
+    text-decoration: none;
+}
+
+.language-switch .menu-item-has-children::after {
+    content: "";
+    display: block;
+    width: 17px;
+    height: 10px;
+    background: url("img/base/angle-down-light.svg") no-repeat 0 0;
+    background-size: cover;
+}
+
+.language-switch .sub-menu {
+    @include reset-list;
+    position: absolute;
+    z-index: 1;
+    top: calc(100% - 3px);
+    right: 0;
+    left: 0;
+    display: block;
+    float: none;
+    margin-top: 20px;
+    padding-top: 3px;
+    background-color: rgba(5, 5, 5, 0.66);
+    opacity: 0;
+    visibility: hidden;
+    transition: margin 0.15s, opacity 0.15s;
+}
+
+body:not(.is-mobile) .language-switch:hover .sub-menu {
+    margin-top: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+.lang-item img {
+    margin-right: 12px;
+}
+
+.lang-item a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.lang-item a:hover,
+.lang-item a:focus {
+    text-decoration: none;
+    color: #c3a660;
+}
+
+.lang-item:first-child a {
+    padding-top: 16px;
+    padding-bottom: 7px;
+}
+
+.lang-item:last-child a {
+    padding-top: 6px;
+    padding-bottom: 20px;
+}

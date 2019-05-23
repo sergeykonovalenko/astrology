@@ -7,30 +7,130 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="format-detection" content="telephone=no">
     <!-- SEO -->
-    <title>GULP PROJECT</title>
-    <meta name="description" content="Описание сайта для поисковиков, рекомендуемый размер от 70 до 140 символов">
-    <meta name="keywords" content="ключевые, слова, через, запятую (рекомендованное количество слов в данном теге — 5-10)">
+    <title>Оксана Мякошина | Профессиональный Астролог</title>
+    <meta name="description" content="Оксана Мякошина 📞 +7 (965) 126-10-13. Астролог. Услуги: ⭐ Астрологическая консультация ⭐ Прогноз важных событий ⭐ Синастрическая консультация ⭐ Прогноз на год  ⭐ Выбор оптимальной даты">
+    <meta name="keywords" content="консультация астролога, сайт астролога, заказать гороскоп, астрология, гороскоп">
     <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#603cba">
+    <meta name="theme-color" content="#ffffff">
     <!-- OG -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Название страницы, максимум 70 символов">
-    <meta property="og:description" content="Описание, до 200 символов">
-    <meta property="og:image" content="http://www.site-name.com/img/og/poster-1200x630.png">
-    <meta property="og:url" content="Ссылка на текущую страницу (http://www.site-name.com/current-page)">
-    <meta property="og:site_name" content="GULP PROJECT">
+    <meta property="og:title" content="Консультация астролога">
+    <meta property="og:description" content="Оксана Мякошина 📞 +7 (965) 126-10-13. Астролог. Услуги: ⭐ Астрологическая консультация ⭐ Прогноз важных событий ⭐ Синастрическая консультация ⭐ Прогноз на год  ⭐ Выбор оптимальной даты">
+    <meta property="og:image" content="img/og/poster-1200x630.png">
+    <meta property="og:url" content="http://astro-ocean.com">
+    <meta property="og:site_name" content="Оксана Мякошина – Астролог">
+    <!-- Modernizr -->
+    <script src="js/modernizr-custom.js"></script>
     <!-- Styles -->
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <div class="first-screen">
+        <header class="main-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4 d-flex align-items-center">
+                        <a class="main-header__logo" title="Оксана Мякошина – Астролог">
+                            <img src="img/base/logo.svg" width="161" height="54" alt="Оксана Мякошина – Астролог">
+                        </a>
+                        <ul id="menu-pereklyuchatel-yazyka" class="language-switch">
+                            <li id="menu-item-308" class="pll-parent-menu-item menu-item menu-item-type-custom menu-item-object-custom current-menu-parent menu-item-has-children menu-item-308">
+                                <a href="#pll_switcher">
+                                    <span>RU</span>
+                                </a>
+                            <ul class="sub-menu">
+                                <li class="lang-item lang-item-11 lang-item-uk lang-item-first current-lang menu-item menu-item-type-custom menu-item-object-custom current_page_item menu-item-home menu-item-308-ru">
+                                    <a href="https://steeluz.com/ru/" hreflang="ru-RU" lang="ru-RU" class="scrollto">
+                                        <img src="img/base/ru_RU.svg" title="RU" alt="RU">
+                                        <span>RU</span>
+                                    </a></li>
+                                <li class="lang-item lang-item-18 lang-item-en menu-item menu-item-type-custom menu-item-object-custom menu-item-308-en">
+                                    <a href="https://steeluz.com/en/" hreflang="en-GB" lang="en-GB" class="scrollto">
+                                        <img src="img/base/en_GB.svg" title="EN" alt="">
+                                        <span>EN</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        </ul>
+                    </div>
+                    <div class="col-8 d-flex align-items-center">
+                        <nav class="main-header__nav">
+                            <ul>
+                                <li><a class="scrollto" href="#">Главная</a></li>
+                                <li><a class="scrollto" href="#">Обо мне</a></li>
+                                <li><a class="scrollto" href="#">Услуги</a></li>
+                                <li><a class="scrollto" href="#">Контакты</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="offer-index">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="offer-index__box">
+                            <h1 class="offer-index__title">О чем расскажут звезды</h1>
+                            <a class="offer-index__button" href="#">Найти свой путь</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="offer-index__astrology scene">
+                    <img data-depth="0.2" data-limit-y="0" src="img/base/astrology.svg" alt="">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="astrology">
+        <div class="container">
+            <div class="astrology__content">
+                <h2>Астрология</h2>
+                <p>
+                    В современном мире мы ежедневно сталкиваемся с различными проблемами:
+                    будь то отношения с близкими, друзьями и коллегами, болезни,
+                    внезапные потери и расставания. Почему это происходит со мной?
+                    Что я делаю не так?
+                </p>
+                <p>
+                    Астрология способна дать ответ на эти вопросы и многие другие
+                    вопросы такие, как В чем мое призвание? Каковы мои сильные
+                    стороны?  каком направлении двигаться?
+                </p>
+                <p>
+                    Главный принцип Астрологии, заключается в том, что каждый
+                    человек правильно используя данный ему индивидуальный набор
+                    энергий, способен достичь действительно высоких результатов
+                    и прожить действительно счастливую, гармоничную жизнь!
+                </p>
+            </div>
+        </div>
+    </section>
 
     <!-- jQuery -->
-    <!-- Bootstrap -->
-    <!-- Slick Slider -->
-    <!-- Arctic Modal -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <!-- Parallax -->
+    <script src="js/parallax.min.js"></script>
+    <!-- Bootstrap Bundle -->
+    <script src="js/bootstrap.bundle.min.js"></script>
     <!-- Masked Input -->
+    <script src="js/jquery.maskedinput.min.js"></script>
     <!-- jQuery mb.browser -->
+    <script src="js/jquery.mb.browser.js"></script>
+    <!-- jQuery Validate -->
+    <script src="js/jquery.validate.min.js"></script>
     <!-- Basic Init -->
+    <script src="js/basic-init.js"></script>
 </body>
 </html>

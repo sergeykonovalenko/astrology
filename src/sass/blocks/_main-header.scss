@@ -1,0 +1,49 @@
+.main-header {
+    font-weight: 300;
+    background-color: rgba(5, 5, 5, 0.66);
+}
+
+.main-header__logo {
+    display: block;
+    margin-right: 20px;
+}
+
+.main-header__logo[href] {
+    cursor: pointer;
+}
+
+.main-header__nav {
+    margin-left: auto;
+}
+
+.main-header__nav ul {
+    @include reset-list;
+    display: flex;
+}
+
+.main-header__nav li {
+
+}
+
+.main-header__nav li:last-child {
+    margin-right: 0;
+}
+
+.main-header__nav a {
+    display: flex;
+    align-items: center;
+    height: 82px;
+    padding: 0 28px;
+    color: #fff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.main-header__nav li:last-child a {
+    padding-right: 0;
+}
+
+.main-header__nav a:hover {
+    text-decoration: none;
+    color: #c3a660;
+}

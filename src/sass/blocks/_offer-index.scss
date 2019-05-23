@@ -1,0 +1,52 @@
+.offer-index {
+
+}
+
+.offer-index .container {
+    position: relative;
+}
+
+.offer-index__box {
+    min-height: 637px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.offer-index__title {
+    margin-bottom: 26px;
+    font-weight: 300;
+    font-size: 48px;
+    color: #fff;
+}
+
+.offer-index__button {
+    min-width: 354px;
+    padding: 13px 15px;
+    font-size: 30px;
+    text-align: center;
+    color: #100832;
+    background-color: #b79c58;
+    border: 2px solid #b79c58;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 7px rgba(196, 145, 17, 0.54),
+                0 0 27.52px 15.48px rgba(172, 146, 81, 0.1);
+
+}
+
+.offer-index__button:hover,
+.offer-index__button:focus {
+    text-decoration: none;
+    color: #dcaf5e;
+    background-color: #fff;
+    border-color: #dcaf5e;
+}
+
+.offer-index__astrology {
+    position: absolute;
+    right: -180px;
+    bottom: 0;
+    opacity: 0.1;
+}

@@ -1,0 +1,16 @@
+.first-screen {
+    padding-top: 27px;
+    background-color: #090837;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.no-js .first-screen,
+.no-webp .first-screen {
+    background-image: url("img/bg/first-screen.jpg");
+}
+
+.webp .first-screen {
+    background-image: url("img/bg/first-screen.webp");
+}
