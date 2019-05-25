@@ -1,3 +1,97 @@
 .astrology {
+    position: relative;
+    padding-top: 71px;
+    padding-bottom: 140px;
+    background-repeat: no-repeat;
+    background-position: calc(50% - 680px) calc(50% - 26px);
+}
 
+.no-js .astrology,
+.no-webp .astrology {
+    background-image: url("img/bg/horoscope.png");
+}
+
+.webp .astrology {
+    background-image: url("img/bg/horoscope.webp");
+}
+
+.astrology::after {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: 0;
+    z-index: 1;
+    width: 393px;
+    height: 385px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: contain;
+    pointer-events: none;
+}
+
+.no-js .astrology::after,
+.no-webp .astrology::after {
+    background-image: url("img/bg/stars.png");
+}
+
+.webp .astrology::after {
+    background-image: url("img/bg/stars.webp");
+}
+
+.astrology__clouds-box {
+    position: absolute;
+    top: -188px;
+    right: -100vw;
+    left: -100vw;
+    height: 188px;
+}
+
+.astrology__clouds {
+    height: 100%;
+    background-repeat: repeat-x;
+    background-position: 80px 0;
+}
+
+.no-js .astrology__clouds,
+.no-webp .astrology__clouds {
+    background-image: url("img/bg/clouds-astrology.png");
+}
+
+.webp .astrology__clouds {
+    background-image: url("img/bg/clouds-astrology.webp");
+}
+
+.astrology__content {
+    position: relative;
+    z-index: 2;
+    padding-left: 200px;
+}
+
+.astrology__content h2,
+.astrology__content h3 {
+    margin-top: 64px;
+    margin-bottom: 32px;
+    font-weight: 500;
+    font-size: 36px;
+    text-align: center;
+    color: #4c3072;
+}
+
+.astrology__content h3 {
+    font-size: 33px;
+}
+
+.astrology__content p,
+.astrology__content ul {
+    margin: 33px 0;
+    font-size: 20px;
+    line-height: 1.65em;
+}
+
+.astrology__content *:first-of-type {
+    margin-top: 0;
+}
+
+.astrology__content *:last-child {
+    margin-bottom: 0;
 }

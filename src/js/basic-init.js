@@ -8,10 +8,33 @@ $(document).ready(function () {
     }
 
     // parallax
-    let scene = document.querySelectorAll('.scene');
-    scene.forEach(function (sceneItem) {
-        let parallaxScene = new Parallax(sceneItem, {
+    if (!is_mobile) {
+        let $window = $(window);
 
+        $('[data-type="background"]').each(function() {
+            let $bgobj = $(this);
+
+            $(window).scroll(function() {
+                let yPos = -($window.scrollTop() / $bgobj.data('speed'));
+                let coords = '50% '+ yPos + 'px';
+
+                $bgobj.css({ backgroundPosition: coords });
+            });
+        });
+    }
+
+
+    let astrology = document.querySelector('.offer-index__astrology');
+    let parallaxAstrology = new Parallax(astrology, {
+        limitY: 0,
+        invertX: false
+    });
+
+
+    let clouds = document.querySelectorAll('.clouds');
+    clouds.forEach(function (cloudsItem) {
+        let parallaxClouds = new Parallax(cloudsItem, {
+            limitY: 0,
         });
     });
 

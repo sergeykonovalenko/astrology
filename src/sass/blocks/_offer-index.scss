@@ -7,11 +7,15 @@
 }
 
 .offer-index__box {
-    min-height: 637px;
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    min-height: 637px;
+    padding-top: 100px;
+    padding-bottom: 188px;
 }
 
 .offer-index__title {
@@ -46,7 +50,8 @@
 
 .offer-index__astrology {
     position: absolute;
-    right: -180px;
-    bottom: 0;
+    right: -198px;
+    bottom: 108px;
+    z-index: 1;
     opacity: 0.1;
 }
