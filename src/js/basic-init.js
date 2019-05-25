@@ -23,13 +23,16 @@ $(document).ready(function () {
         });
     }
 
+    // $('.about').parallax({
+    //     imageSrc: '../img/bg/about.webp',
+    //     speed: 0.4
+    // });
 
     let astrology = document.querySelector('.offer-index__astrology');
     let parallaxAstrology = new Parallax(astrology, {
         limitY: 0,
         invertX: false
     });
-
 
     let clouds = document.querySelectorAll('.clouds');
     clouds.forEach(function (cloudsItem) {
@@ -38,6 +41,12 @@ $(document).ready(function () {
         });
     });
 
+    if (window.innerWidth < 1900) {
+        let aboutStars = document.querySelector('.about__stars-box');
+        let parallaxAboutStars = new Parallax(aboutStars, {
+            limitX: 190
+        });
+    }
 
     // masked input
     $('input[type="tel"]').mask('+44 (0) 99-9999-99-99');
