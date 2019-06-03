@@ -1,0 +1,251 @@
+.contacts {
+
+}
+
+.contacts__top {
+    position: relative;
+    padding-top: 135px;
+    padding-bottom: 195px;
+    color: #fff;
+    background-color: #110b3e;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.no-js .contacts__top,
+.no-webp .contacts__top {
+    background-image: url("img/bg/contacts.jpg");
+}
+
+.webp .contacts__top {
+    background-image: url("img/bg/contacts.webp");
+}
+
+.contacts__box {
+    width: 970px;
+    margin: 0 auto;
+    padding: 40px 15px 33px;
+    background-color: rgba(2, 1, 19, 0.55);
+}
+
+.contacts__text {
+    margin-bottom: 33px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.contacts__text h2 {
+    margin-bottom: 27px;
+    font-weight: 300;
+    font-size: 36px;
+    color: #dcaf5e;
+}
+
+.contacts__text p {
+    margin: 18px 0;
+    line-height: 1.333333em;
+}
+
+.contacts__text *:first-child {
+    margin-top: 0;
+}
+
+.contacts__text *:last-child {
+    margin-bottom: 0;
+}
+
+.contacts__list {
+    @include reset-list;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contacts__item {
+    margin-right: 35px;
+}
+
+.contacts__item:last-child {
+    margin-right: 0;
+}
+
+.contacts__link {
+    display: flex;
+    align-items: center;
+    width: 195px;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.125em;
+    color: #9e8056;
+    cursor: pointer;
+}
+
+.contacts__link--whats-app {
+    width: 211px;
+    margin-top: -8px;
+}
+
+.contacts__link:hover,
+.contacts__link:focus {
+    color: #9e8056;
+    text-decoration: none;
+}
+
+.contacts__link::before {
+    content: "";
+    flex-shrink: 0;
+    width: 54px;
+    height: 54px;
+    margin-right: 12px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: contain;
+    border-radius: 50%;
+    box-shadow: 0 0 7px 3px #937958;
+    transition-delay: 0.21s;
+    transition: all 0.38s cubic-bezier(0.65, 0.26, 0.42, 0.89);
+}
+
+.contacts__link--whats-app::before {
+    width: 70px;
+    height: 70px;
+    margin-right: 5px;
+    border-radius: 0;
+    background-image: url("img/base/contacts-whats-app.svg");
+    box-shadow: none;
+}
+
+.contacts__link--telegram::before {
+    background-image: url("img/base/contacts-telegram.svg");
+}
+
+.contacts__link--viber::before {
+    background-image: url("img/base/contacts-viber.svg");
+}
+
+.contacts__link--email::before {
+    background-image: url("img/base/contacts-email.svg");
+}
+
+.contacts__link:hover::before,
+.contacts__link:focus::before {
+    animation: 0.6s shake;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotateZ(0)
+    }
+    10% {
+        transform: rotateZ(-30deg)
+    }
+    20% {
+        transform: rotateZ(15deg)
+    }
+    30% {
+        transform: rotateZ(-10deg)
+    }
+    40% {
+        transform: rotateZ(7.5deg)
+    }
+    50% {
+        transform: rotate(-6deg)
+    }
+    60% {
+        transform: rotate(5deg)
+    }
+    70% {
+        transform: rotate(-4.28571deg)
+    }
+    80% {
+        transform: rotate(3.75deg)
+    }
+    90% {
+        transform: rotate(-3.33333deg)
+    }
+    100% {
+        transform: rotate(0)
+    }
+}
+
+.contacts__cloud-box {
+    position: absolute;
+    top: 93px;
+    left: -500px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.contacts__cloud {
+    width: 689px;
+    height: 348px;
+}
+
+.no-js .contacts__cloud,
+.no-webp .contacts__cloud {
+    background-image: url("img/bg/contacts-cloud.png");
+}
+
+.webp .contacts__cloud {
+    background-image: url("img/bg/contacts-cloud.webp");
+}
+
+.contacts__stars-box {
+    position: absolute;
+    top: 267px;
+    left: -270px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.contacts__stars {
+    width: 650px;
+    height: 493px;
+}
+
+.no-js .contacts__stars,
+.no-webp .contacts__stars {
+    background-image: url("img/bg/contacts-stars.png");
+}
+
+.webp .contacts__stars {
+    background-image: url("img/bg/contacts-stars.webp");
+}
+
+.contacts__space-box {
+    position: absolute;
+    top: -290px;
+    right: -30px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.contacts__space {
+    width: 704px;
+    height: 833px;
+}
+
+.no-js .contacts__space,
+.no-webp .contacts__space {
+    background-image: url("img/bg/space.png");
+}
+
+.webp .contacts__space {
+    background-image: url("img/bg/space.webp");
+}
+
+.contacts__space {
+
+}
+
+@media screen and (max-width: 1800px) {
+    .contacts__stars-box {
+        left: -380px;
+    }
+
+    .contacts__space-box {
+        right: -230px;
+    }
+}

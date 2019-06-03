@@ -41,12 +41,27 @@ $(document).ready(function () {
         });
     });
 
-    if (window.innerWidth < 1900) {
-        let aboutStars = document.querySelector('.about__stars-box');
-        let parallaxAboutStars = new Parallax(aboutStars, {
-            limitX: 190
-        });
-    }
+    let aboutStars = document.querySelector('.about__stars-box');
+    let parallaxAboutStars = new Parallax(aboutStars, {
+        limitX: 190,
+        invertX: false
+    });
+
+    let contactsCloud = document.querySelector('.contacts__cloud-box');
+    let parallaxContactsCloud = new Parallax(contactsCloud, {
+        // invertX: false
+    });
+
+    let contactsStars = document.querySelector('.contacts__stars-box');
+    let parallaxContactsStars = new Parallax(contactsStars, {
+        invertX: false
+    });
+
+    let contactsSpace = document.querySelector('.contacts__space-box');
+    let parallaxContactsSpace = new Parallax(contactsSpace, {
+        limitX: 30,
+        invertX: false
+    });
 
     // masked input
     $('input[type="tel"]').mask('+44 (0) 99-9999-99-99');

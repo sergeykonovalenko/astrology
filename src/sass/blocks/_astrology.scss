@@ -38,29 +38,6 @@
     background-image: url("img/bg/stars.webp");
 }
 
-.astrology__clouds-box {
-    position: absolute;
-    top: -188px;
-    right: -100vw;
-    left: -100vw;
-    height: 188px;
-}
-
-.astrology__clouds {
-    height: 100%;
-    background-repeat: repeat-x;
-    background-position: 80px 0;
-}
-
-.no-js .astrology__clouds,
-.no-webp .astrology__clouds {
-    background-image: url("img/bg/clouds-astrology.png");
-}
-
-.webp .astrology__clouds {
-    background-image: url("img/bg/clouds-astrology.webp");
-}
-
 .astrology__content {
     position: relative;
     z-index: 2;

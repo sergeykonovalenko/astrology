@@ -26,26 +26,14 @@
 }
 
 .offer-index__button {
-    min-width: 354px;
-    padding: 13px 15px;
+    min-width: 358px;
+    padding: 23px 15px;
     font-size: 30px;
-    text-align: center;
     color: #100832;
-    background-color: #b79c58;
-    border: 2px solid #b79c58;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+    background: #b79c58;
     box-shadow: 0 4px 7px rgba(196, 145, 17, 0.54),
                 0 0 27.52px 15.48px rgba(172, 146, 81, 0.1);
 
-}
-
-.offer-index__button:hover,
-.offer-index__button:focus {
-    text-decoration: none;
-    color: #dcaf5e;
-    background-color: #fff;
-    border-color: #dcaf5e;
 }
 
 .offer-index__astrology {
