@@ -1,0 +1,54 @@
+.main-footer {
+    padding: 13px 0;
+    background-color: #120c26;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.no-js .main-footer,
+.no-webp .main-footer {
+    background-image: url("img/bg/main-footer.jpg");
+}
+
+.webp .main-footer {
+    background-image: url("img/bg/main-footer.webp");
+}
+
+.main-footer__logo {
+    
+}
+
+.main-footer__logo {
+    width: 171px;
+    height: 58px;
+}
+
+.main-footer__logo[href] {
+    cursor: pointer;
+}
+
+.main-footer__nav {
+    @include reset-list;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main-footer__nav li {
+    margin-right: 47px;
+}
+
+.main-footer__nav li:last-child {
+    margin-right: 0;
+}
+
+.main-footer__nav a {
+    font-weight: 300;
+    color: #afaeb3;
+    transition: color 0.3s ease;
+}
+
+.main-footer__nav a:hover {
+    text-decoration: none;
+    color: #fff;
+}

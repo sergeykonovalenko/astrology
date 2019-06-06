@@ -33,7 +33,7 @@
 </head>
 <body>
 
-    <div class="first-screen" data-speed="3" data-type="background">
+    <div class="first-screen" id="js-first-screen" data-speed="3" data-type="background">
         <header class="main-header">
             <div class="container">
                 <div class="row">
@@ -65,24 +65,23 @@
                     <div class="col-8 d-flex align-items-center">
                         <nav class="main-header__nav">
                             <ul>
-                                <li><a class="scrollto" href="#">Главная</a></li>
-                                <li><a class="scrollto" href="#">Обо мне</a></li>
-                                <li><a class="scrollto" href="#">Услуги</a></li>
-                                <li><a class="scrollto" href="#">Контакты</a></li>
+                                <li><a class="scrollto" href="#js-first-screen">Главная</a></li>
+                                <li><a class="scrollto" href="#js-about">Обо мне</a></li>
+                                <li><a class="scrollto" href="#js-services">Услуги</a></li>
+                                <li><a class="scrollto" href="#js-contacts">Контакты</a></li>
                             </ul>
                         </nav>
                     </div>
                 </div>
             </div>
         </header>
-
         <section class="offer-index">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <div class="offer-index__box">
                             <h1 class="offer-index__title">О чем расскажут звезды</h1>
-                            <a class="offer-index__button button" href="#">Найти свой путь</a>
+                            <a class="offer-index__button button" href="#" data-toggle="modal" data-target="#js-modal-order">Найти свой путь</a>
                         </div>
                     </div>
                 </div>
@@ -93,7 +92,7 @@
         </section>
     </div>
 
-    <section class="astrology">
+    <section class="astrology" id="js-astrology">
         <div class="astrology__clouds clouds">
             <div class="clouds__bg" data-depth="0.6"></div>
         </div>
@@ -125,7 +124,7 @@
         </div>
     </section>
 
-    <section class="about">
+    <section class="about" id="js-about">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -164,7 +163,7 @@
         </div>
     </section>
 
-    <section class="services">
+    <section class="services" id="js-services">
         <div class="services__clouds clouds">
             <div class="clouds__bg clouds__bg--about" data-depth="0.6"></div>
         </div>
@@ -188,8 +187,77 @@
                                     <li>Причины возникновения проблем в различных сферах и пути их решения</li>
                                 </ul>
                             </div>
-                            <a class="services__button button" href="#">2 950 ₽</a>
-                        </li>
+                            <a class="services__button button" href="#" data-toggle="modal" data-target="#js-modal-order-1">2 950 ₽</a>
+                            <!-- Modal order -->
+                            <div class="modal-order modal fade" id="js-modal-order-1" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <button class="modal-order__close" type="button" data-dismiss="modal" aria-label="Close" title="Закрыть">Закрыть</button>
+                                        <p class="modal-order__title">
+                                            <strong>Заказать</strong>
+                                            Астрологическую консультацию
+                                        </p>
+                                        <form class="modal-order__form js-form" action="success.php" method="POST">
+                                            <ul class="modal-order__list">
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-name-1">ФИО<sup>*</sup></label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-name-1" type="text" name="name">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-date-of-birth-1">Дата рождения</label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-date-of-birth-1" type="date" name="date-of-birth">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-place-of-birth-1">Место рождения</label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-place-of-birth-1" type="text" name="place-of-birth">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-time-of-birth-1">Время рождения</label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-time-of-birth-1" type="time" name="time-of-birth">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label modal-order__label--country" for="modal-order-country-1">Страна, откуда выполняется оплата</label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-country-1" type="text" name="country">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-email-1">E-Mail<sup>*</sup></label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-email-1" type="email" name="email">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-form-of-payment-1">Форма оплаты:</label>
+                                                    <p class="modal-order__field-box modal-order__field-box--select">
+                                                        <select class="modal-order__field modal-order__field--select" id="modal-order-form-of-payment-1" name="form-of-payment">
+                                                            <option>Наличная оплата</option>
+                                                            <option>Оплата через QIWI Кошелек</option>
+                                                            <option>Оплата через систему денежных переводов</option>
+                                                        </select>
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-message-1">Вы можете описать Вашу ситуацию или задайте интересующие вопросы</label>
+                                                    <p class="modal-order__field-box">
+                                                        <textarea class="modal-order__field modal-order__field--textarea" id="modal-order-message-1" name="email"></textarea>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                            <button class="modal-order__button button button--extra" data-submit>Заказать</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </li><!-- end services__item -->
                         <li class="services__item">
                             <div class="services__info">
                                 <h3>Прогноз важных событий в течении жизни</h3>
@@ -197,8 +265,77 @@
                                     <li>Прогноз критических точек и основных моментов в жизни индивидуума (необходимо знать точное время рождения)</li>
                                 </ul>
                             </div>
-                            <a class="services__button button" href="#">990 ₽</a>
-                        </li>
+                            <a class="services__button button" href="#" data-toggle="modal" data-target="#js-modal-order-2">990 ₽</a>
+                            <!-- Modal order -->
+                            <div class="modal-order modal fade" id="js-modal-order-2" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <button class="modal-order__close" type="button" data-dismiss="modal" aria-label="Close" title="Закрыть">Закрыть</button>
+                                        <p class="modal-order__title">
+                                            <strong>Заказать</strong>
+                                            Прогноз важных событий в течении жизни
+                                        </p>
+                                        <form class="modal-order__form js-form" action="success.php" method="POST">
+                                            <ul class="modal-order__list">
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-name-2">ФИО<sup>*</sup></label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-name-2" type="text" name="name">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-date-of-birth-2">Дата рождения</label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-date-of-birth-2" type="date" name="date-of-birth">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-place-of-birth-2">Место рождения</label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-place-of-birth-2" type="text" name="place-of-birth">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-time-of-birth-2">Время рождения</label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-time-of-birth-2" type="time" name="time-of-birth">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label modal-order__label--country" for="modal-order-country-2">Страна, откуда выполняется оплата</label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-country-2" type="text" name="country">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-email-2">E-Mail<sup>*</sup></label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-email-2" type="email" name="email">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-form-of-payment-2">Форма оплаты:</label>
+                                                    <p class="modal-order__field-box modal-order__field-box--select">
+                                                        <select class="modal-order__field modal-order__field--select" id="modal-order-form-of-payment-2" name="form-of-payment">
+                                                            <option>Наличная оплата</option>
+                                                            <option>Оплата через QIWI Кошелек</option>
+                                                            <option>Оплата через систему денежных переводов</option>
+                                                        </select>
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-message-2">Вы можете описать Вашу ситуацию или задайте интересующие вопросы</label>
+                                                    <p class="modal-order__field-box">
+                                                        <textarea class="modal-order__field modal-order__field--textarea" id="modal-order-message-2" name="email"></textarea>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                            <button class="modal-order__button button button--extra" data-submit>Заказать</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </li><!-- end services__item -->
                         <li class="services__item">
                             <div class="services__info">
                                 <h3>Синастрическая консультация</h3>
@@ -213,8 +350,77 @@
                                     </li>
                                 </ul>
                             </div>
-                            <a class="services__button button" href="#">850 ₽</a>
-                        </li>
+                            <a class="services__button button" href="#" data-toggle="modal" data-target="#js-modal-order-3">850 ₽</a>
+                            <!-- Modal order -->
+                            <div class="modal-order modal fade" id="js-modal-order-3" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <button class="modal-order__close" type="button" data-dismiss="modal" aria-label="Close" title="Закрыть">Закрыть</button>
+                                        <p class="modal-order__title">
+                                            <strong>Заказать</strong>
+                                            Синастрическую консультацию
+                                        </p>
+                                        <form class="modal-order__form js-form" action="success.php" method="POST">
+                                            <ul class="modal-order__list">
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-name-3">ФИО<sup>*</sup></label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-name-3" type="text" name="name">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-date-of-birth-3">Дата рождения</label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-date-of-birth-3" type="date" name="date-of-birth">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-place-of-birth-3">Место рождения</label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-place-of-birth-3" type="text" name="place-of-birth">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-time-of-birth-3">Время рождения</label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-time-of-birth-3" type="time" name="time-of-birth">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label modal-order__label--country" for="modal-order-country-3">Страна, откуда выполняется оплата</label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-country-3" type="text" name="country">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-email-3">E-Mail<sup>*</sup></label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-email-3" type="email" name="email">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-form-of-payment-3">Форма оплаты:</label>
+                                                    <p class="modal-order__field-box modal-order__field-box--select">
+                                                        <select class="modal-order__field modal-order__field--select" id="modal-order-form-of-payment-3" name="form-of-payment">
+                                                            <option>Наличная оплата</option>
+                                                            <option>Оплата через QIWI Кошелек</option>
+                                                            <option>Оплата через систему денежных переводов</option>
+                                                        </select>
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-message-3">Вы можете описать Вашу ситуацию или задайте интересующие вопросы</label>
+                                                    <p class="modal-order__field-box">
+                                                        <textarea class="modal-order__field modal-order__field--textarea" id="modal-order-message-3" name="email"></textarea>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                            <button class="modal-order__button button button--extra" data-submit>Заказать</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </li><!-- end services__item -->
                         <li class="services__item">
                             <div class="services__info">
                                 <h3>Прогноз на год</h3>
@@ -222,11 +428,80 @@
                                     <li>Прогноз событий на год в вашей жизни</li>
                                 </ul>
                             </div>
-                            <a class="services__button button" href="#">850 ₽</a>
-                        </li>
+                            <a class="services__button button" href="#" data-toggle="modal" data-target="#js-modal-order-4">850 ₽</a>
+                            <!-- Modal order -->
+                            <div class="modal-order modal fade" id="js-modal-order-4" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <button class="modal-order__close" type="button" data-dismiss="modal" aria-label="Close" title="Закрыть">Закрыть</button>
+                                        <p class="modal-order__title">
+                                            <strong>Заказать</strong>
+                                            Прогноз на год
+                                        </p>
+                                        <form class="modal-order__form js-form" action="success.php" method="POST">
+                                            <ul class="modal-order__list">
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-name-4">ФИО<sup>*</sup></label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-name-4" type="text" name="name">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-date-of-birth-4">Дата рождения</label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-date-of-birth-4" type="date" name="date-of-birth">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-place-of-birth-4">Место рождения</label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-place-of-birth-4" type="text" name="place-of-birth">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-time-of-birth-4">Время рождения</label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-time-of-birth-4" type="time" name="time-of-birth">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label modal-order__label--country" for="modal-order-country-4">Страна, откуда выполняется оплата</label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-country-4" type="text" name="country">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-email-4">E-Mail<sup>*</sup></label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-email-4" type="email" name="email">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-form-of-payment-4">Форма оплаты:</label>
+                                                    <p class="modal-order__field-box modal-order__field-box--select">
+                                                        <select class="modal-order__field modal-order__field--select" id="modal-order-form-of-payment-4" name="form-of-payment">
+                                                            <option>Наличная оплата</option>
+                                                            <option>Оплата через QIWI Кошелек</option>
+                                                            <option>Оплата через систему денежных переводов</option>
+                                                        </select>
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-message-4">Вы можете описать Вашу ситуацию или задайте интересующие вопросы</label>
+                                                    <p class="modal-order__field-box">
+                                                        <textarea class="modal-order__field modal-order__field--textarea" id="modal-order-message-4" name="email"></textarea>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                            <button class="modal-order__button button button--extra" data-submit>Заказать</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </li><!-- end services__item -->
                         <li class="services__item">
                             <div class="services__info">
-                                <h3>Выбор оптимальной даты  </h3>
+                                <h3>Выбор оптимальной даты</h3>
                                 <p>Выбор наиболее оптимальной даты для проведения:</p>
                                 <ul>
                                     <li>свадьбы</li>
@@ -235,15 +510,84 @@
                                     <li>операции</li>
                                 </ul>
                             </div>
-                            <a class="services__button button" href="#">500 ₽</a>
-                        </li>
+                            <a class="services__button button" href="#" data-toggle="modal" data-target="#js-modal-order-5">500 ₽</a>
+                            <!-- Modal order -->
+                            <div class="modal-order modal fade" id="js-modal-order-5" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <button class="modal-order__close" type="button" data-dismiss="modal" aria-label="Close" title="Закрыть">Закрыть</button>
+                                        <p class="modal-order__title">
+                                            <strong>Заказать</strong>
+                                            Выбор оптимальной даты
+                                        </p>
+                                        <form class="modal-order__form js-form" action="success.php" method="POST">
+                                            <ul class="modal-order__list">
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-name-5">ФИО<sup>*</sup></label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-name-5" type="text" name="name">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-date-of-birth-5">Дата рождения</label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-date-of-birth-5" type="date" name="date-of-birth">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-place-of-birth-5">Место рождения</label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-place-of-birth-5" type="text" name="place-of-birth">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-time-of-birth-5">Время рождения</label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-time-of-birth-5" type="time" name="time-of-birth">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label modal-order__label--country" for="modal-order-country-5">Страна, откуда выполняется оплата</label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-country-5" type="text" name="country">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-email-5">E-Mail<sup>*</sup></label>
+                                                    <p class="modal-order__field-box">
+                                                        <input class="modal-order__field" id="modal-order-email-5" type="email" name="email">
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-form-of-payment-5">Форма оплаты:</label>
+                                                    <p class="modal-order__field-box modal-order__field-box--select">
+                                                        <select class="modal-order__field modal-order__field--select" id="modal-order-form-of-payment-5" name="form-of-payment">
+                                                            <option>Наличная оплата</option>
+                                                            <option>Оплата через QIWI Кошелек</option>
+                                                            <option>Оплата через систему денежных переводов</option>
+                                                        </select>
+                                                    </p>
+                                                </li>
+                                                <li class="modal-order__item">
+                                                    <label class="modal-order__label" for="modal-order-message-5">Вы можете описать Вашу ситуацию или задайте интересующие вопросы</label>
+                                                    <p class="modal-order__field-box">
+                                                        <textarea class="modal-order__field modal-order__field--textarea" id="modal-order-message-5" name="email"></textarea>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                            <button class="modal-order__button button button--extra" data-submit>Заказать</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </li><!-- end services__item -->
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="contacts">
+    <section class="contacts" id="js-contacts">
         <div class="contacts__top">
             <div class="container">
                 <div class="row">
@@ -306,6 +650,96 @@
             </div>
         </div>
     </section>
+
+    <footer class="main-footer" id="js-main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <a class="main-footer__logo" title="Оксана Мякошина – Астролог">
+                        <img src="img/base/logo.svg" width="171" href="58" alt="Оксана Мякошина – Астролог">
+                    </a>
+                </div>
+                <div class="col-8 d-flex align-items-center">
+                    <ul class="main-footer__nav">
+                        <li><a class="scrollto" href="#js-first-screen">Главная</a></li>
+                        <li><a class="scrollto" href="#js-about">Обо мне</a></li>
+                        <li><a class="scrollto" href="#js-services">Услуги</a></li>
+                        <li><a class="scrollto" href="#js-contacts">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal order -->
+    <div class="modal-order modal fade" id="js-modal-order" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button class="modal-order__close" type="button" data-dismiss="modal" aria-label="Close" title="Закрыть">Закрыть</button>
+                <p class="modal-order__title">
+                    <strong>Заказать</strong>
+                    Астрологическую консультацию
+                </p>
+                <form class="modal-order__form js-form" action="success.php" method="POST">
+                    <ul class="modal-order__list">
+                        <li class="modal-order__item">
+                            <label class="modal-order__label" for="modal-order-name">ФИО<sup>*</sup></label>
+                            <p class="modal-order__field-box">
+                                <input class="modal-order__field" id="modal-order-name" type="text" name="name">
+                            </p>
+                        </li>
+                        <li class="modal-order__item">
+                            <label class="modal-order__label" for="modal-order-date-of-birth">Дата рождения</label>
+                            <p class="modal-order__field-box">
+                                <input class="modal-order__field" id="modal-order-date-of-birth" type="date" name="date-of-birth">
+                            </p>
+                        </li>
+                        <li class="modal-order__item">
+                            <label class="modal-order__label" for="modal-order-place-of-birth">Место рождения</label>
+                            <p class="modal-order__field-box">
+                                <input class="modal-order__field" id="modal-order-place-of-birth" type="text" name="place-of-birth">
+                            </p>
+                        </li>
+                        <li class="modal-order__item">
+                            <label class="modal-order__label" for="modal-order-time-of-birth">Время рождения</label>
+                            <p class="modal-order__field-box">
+                                <input class="modal-order__field" id="modal-order-time-of-birth" type="time" name="time-of-birth">
+                            </p>
+                        </li>
+                        <li class="modal-order__item">
+                            <label class="modal-order__label modal-order__label--country" for="modal-order-country">Страна, откуда выполняется оплата</label>
+                            <p class="modal-order__field-box">
+                                <input class="modal-order__field" id="modal-order-country" type="text" name="country">
+                            </p>
+                        </li>
+                        <li class="modal-order__item">
+                            <label class="modal-order__label" for="modal-order-email">E-Mail<sup>*</sup></label>
+                            <p class="modal-order__field-box">
+                                <input class="modal-order__field" id="modal-order-email" type="email" name="email">
+                            </p>
+                        </li>
+                        <li class="modal-order__item">
+                            <label class="modal-order__label" for="modal-order-form-of-payment">Форма оплаты:</label>
+                            <p class="modal-order__field-box modal-order__field-box--select">
+                                <select class="modal-order__field modal-order__field--select" id="modal-order-form-of-payment" name="form-of-payment">
+                                    <option>Наличная оплата</option>
+                                    <option>Оплата через QIWI Кошелек</option>
+                                    <option>Оплата через систему денежных переводов</option>
+                                </select>
+                            </p>
+                        </li>
+                        <li class="modal-order__item">
+                            <label class="modal-order__label" for="modal-order-message">Вы можете описать Вашу ситуацию или задайте интересующие вопросы</label>
+                            <p class="modal-order__field-box">
+                                <textarea class="modal-order__field modal-order__field--textarea" id="modal-order-message" name="email"></textarea>
+                            </p>
+                        </li>
+                    </ul>
+                    <button class="modal-order__button button button--extra" data-submit>Заказать</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- jQuery -->
     <script src="js/jquery-3.4.1.min.js"></script>

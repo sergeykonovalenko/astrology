@@ -37,7 +37,31 @@ select,
 textarea {
     display: block;
     width: 100%;
-    padding: 0;
+    height: 35px;
+    padding: 0 10px;
+    font-size: 18px;
+    line-height: 1.25em;
     color: #000;
+    border: 1px solid #daab5d;
     outline: none;
+    transition: all 0.3s ease;
+}
+
+textarea {
+    padding-top: 5px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    box-shadow:  0 0 5px rgba(218, 171, 93, 1);
+}
+
+input.error {
+    background-color: #f3b2b2;
+    border-color: #fb5258;
+}
+
+input.error:focus {
+    box-shadow: 0 0 5px #fb5258;
 }

@@ -15,12 +15,16 @@
     border: none;
     background: linear-gradient(359deg, rgba(204,142,84,1) 0%, rgba(222,179,95,1) 100%);
     border-radius: 5px;
-    transition: background 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
     cursor: pointer;
 }
 
-.button:hover,
-.button:focus {
+.button--extra {
+    background: linear-gradient(0deg, rgba(216,168,93,1) 0%, rgba(198,144,85,1) 100%);
+    box-shadow:  0 4px 7px rgba(196, 145, 17, 0.54);
+}
+
+.button:hover {
     text-decoration: none;
     background: #fff;
     color: #dcaf5e;
@@ -42,8 +46,7 @@
     transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
 }
 
-.button:hover::before,
-.button:focus::before {
+.button:hover::before {
     transform: scale3d(1, 1, 1);
     opacity: 1;
 }
