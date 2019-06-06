@@ -87,3 +87,15 @@ body:not(.is-mobile) .language-switch:hover .sub-menu {
     padding-top: 6px;
     padding-bottom: 20px;
 }
+
+@media screen and (max-width: 1260px) {
+    .language-switch {
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .language-switch {
+        width: 90px;
+    }
+}

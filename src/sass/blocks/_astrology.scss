@@ -20,7 +20,7 @@
     position: absolute;
     top: -40px;
     right: 0;
-    z-index: 1;
+    z-index: 2;
     width: 393px;
     height: 385px;
     background-repeat: no-repeat;
@@ -40,7 +40,7 @@
 
 .astrology__content {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     padding-left: 200px;
 }
 
@@ -71,4 +71,38 @@
 
 .astrology__content *:last-child {
     margin-bottom: 0;
+}
+
+@media screen and (max-width: 1260px) {
+    .astrology {
+        background-position-x: calc(50% - 560px);
+    }
+
+    .astrology::after {
+        right: -145px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .astrology {
+        background-position: center calc(50% + 18px);
+    }
+
+    .astrology::after {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.75);
+    }
+
+    .no-js .astrology::after,
+    .no-webp .astrology::after,
+    .webp .astrology::after {
+        background-image: none;
+    }
+
+    .astrology__content {
+        padding-left: 0;
+    }
 }

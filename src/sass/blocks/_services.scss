@@ -84,3 +84,23 @@
 .services__button {
     
 }
+
+@media screen and (max-width: 1260px) {
+    .services__item {
+        flex-direction: column;
+        padding-right: 34px;
+        padding-bottom: 37px;
+    }
+
+    .services__info {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .services__info ul,
+    .services__info p {
+        padding-left: 0;
+    }
+}

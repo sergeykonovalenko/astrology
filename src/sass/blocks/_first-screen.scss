@@ -5,6 +5,7 @@
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
+    overflow-x: hidden;
 }
 
 .no-js .first-screen,
@@ -14,4 +15,10 @@
 
 .webp .first-screen {
     background-image: url("img/bg/first-screen.webp");
+}
+
+@media screen and (max-width: 1260px) {
+    .first-screen {
+        padding-top: 0;
+    }
 }

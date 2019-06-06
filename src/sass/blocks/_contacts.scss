@@ -31,6 +31,8 @@
 }
 
 .contacts__text {
+    position: relative;
+    z-index: 2;
     margin-bottom: 33px;
     font-size: 18px;
     text-align: center;
@@ -58,6 +60,8 @@
 
 .contacts__list {
     @include reset-list;
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -253,5 +257,49 @@
 
     .contacts__space-box {
         right: -230px;
+    }
+}
+
+@media screen and (max-width: 1260px) {
+    .contacts__box {
+        width: 100%;
+    }
+
+    .contacts__list {
+        justify-content: flex-start;
+        width: 425px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .contacts__item:nth-child(2n) {
+        margin-right: 0;
+    }
+
+    .contacts__link--whats-app {
+        width: 204px;
+        margin-left: -9px;
+    }
+
+    .contacts__item:nth-child(n + 3) {
+        margin-top: 35px;
+    }
+
+    .contacts__stars-box {
+        display: none;
+    }
+
+    .contacts__space-box {
+        right: -500px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .contacts__cloud-box {
+        left: -540px;
+    }
+
+    .contacts__space-box {
+        right: -595px;
     }
 }

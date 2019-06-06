@@ -7,6 +7,15 @@ $(document).ready(function () {
         document.querySelector("body").classList.add('is-mobile');
     }
 
+    // show/hide mobile menu
+    $('.main-header__hamburger').on('click', function () {
+        $('html').toggleClass('show-main-nav');
+    });
+
+    $('.main-header__menu a').on('click', function () {
+        $('html').removeClass('show-main-nav');
+    });
+
     // smooth page scrolling
     $('.scrollto').click(function () {
         var elementClick = '#'+$(this).attr('href').split('#')[1];
@@ -65,7 +74,7 @@ $(document).ready(function () {
     });
 
     // parallax contacts space
-    let limitX = (document.body.clientWidth > 1801) ? 30 : false;
+    let limitX = (window.innerWidth > 1800) ? 30 : false;
     let contactsSpace = document.querySelector('.contacts__space-box');
     let parallaxContactsSpace = new Parallax(contactsSpace, {
         limitX: limitX,

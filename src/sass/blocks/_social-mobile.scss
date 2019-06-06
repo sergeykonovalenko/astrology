@@ -1,0 +1,67 @@
+.social-mobile {
+    @include reset-list;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-mobile__item {
+    margin-right: 5px;
+}
+
+.social-mobile__item:last-child {
+    margin-right: 0;
+}
+
+.social-mobile__link {
+    display: block;
+    box-sizing: content-box;
+    padding: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-origin: content-box;
+    cursor: pointer;
+}
+
+.social-mobile__link--facebook {
+    width: 25px;
+    height: 25px;
+    background-image: url("img/base/social-facebook.svg");
+}
+
+.social-mobile__link--instagram {
+    width: 25px;
+    height: 25px;
+    background-image: url("img/base/social-instagram.svg");
+}
+
+.social-mobile__link--skype {
+    width: 25px;
+    height: 25px;
+    background-image: url("img/base/social-skype.svg");
+}
+
+.social-mobile__link--whatsapp {
+    width: 25px;
+    height: 25px;
+    background-image: url("img/base/social-whatsapp.svg");
+}
+
+.social-mobile__link--viber {
+    width: 25px;
+    height: 27px;
+    background-image: url("img/base/social-viber.svg");
+}
+
+.social-mobile__link--telegram {
+    width: 25px;
+    height: 22px;
+    background-image: url("img/base/social-telegram.svg");
+}
+
+@media screen and (max-width: 1260px) {
+    .social-mobile {
+        display: flex;
+    }
+}
