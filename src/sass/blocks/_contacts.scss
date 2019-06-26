@@ -11,6 +11,9 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+}
+
+body:not(.is-mobile) .contacts__top {
     background-attachment: fixed;
 }
 
@@ -60,6 +63,7 @@
 
 .contacts__list {
     @include reset-list;
+
     position: relative;
     z-index: 2;
     display: flex;
@@ -68,48 +72,53 @@
 }
 
 .contacts__item {
+    width: 195px;
     margin-right: 35px;
+
+    &:last-child {
+        margin-right: 0;
+    }
 }
 
-.contacts__item:last-child {
-    margin-right: 0;
+.contacts__item--whats-app {
+    width: 211px;
+    margin-top: -8px;
 }
 
 .contacts__link {
     display: flex;
     align-items: center;
-    width: 195px;
     font-weight: 300;
     font-size: 16px;
     line-height: 1.125em;
     color: #9e8056;
     cursor: pointer;
-}
 
-.contacts__link--whats-app {
-    width: 211px;
-    margin-top: -8px;
-}
+    &:hover,
+    &:focus {
+        color: #9e8056;
+        text-decoration: none;
+    }
 
-.contacts__link:hover,
-.contacts__link:focus {
-    color: #9e8056;
-    text-decoration: none;
-}
+    &::before {
+        content: "";
+        flex-shrink: 0;
+        width: 54px;
+        height: 54px;
+        margin-right: 12px;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: contain;
+        border-radius: 50%;
+        box-shadow: 0 0 7px 3px #937958;
+        transition-delay: 0.21s;
+        transition: all 0.38s cubic-bezier(0.65, 0.26, 0.42, 0.89);
+    }
 
-.contacts__link::before {
-    content: "";
-    flex-shrink: 0;
-    width: 54px;
-    height: 54px;
-    margin-right: 12px;
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-size: contain;
-    border-radius: 50%;
-    box-shadow: 0 0 7px 3px #937958;
-    transition-delay: 0.21s;
-    transition: all 0.38s cubic-bezier(0.65, 0.26, 0.42, 0.89);
+    &:hover::before,
+    &:focus::before {
+        animation: 0.6s shake;
+    }
 }
 
 .contacts__link--whats-app::before {
@@ -131,11 +140,6 @@
 
 .contacts__link--email::before {
     background-image: url("img/base/contacts-email.svg");
-}
-
-.contacts__link:hover::before,
-.contacts__link:focus::before {
-    animation: 0.6s shake;
 }
 
 @keyframes shake {
@@ -276,7 +280,7 @@
         margin-right: 0;
     }
 
-    .contacts__link--whats-app {
+    .contacts__item--whats-app {
         width: 204px;
         margin-left: -9px;
     }
@@ -301,5 +305,36 @@
 
     .contacts__space-box {
         right: -595px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .contacts__text h2 {
+        font-size: 25px;
+    }
+
+    .contacts__text br {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 495px) {
+    .contacts__list {
+        display: block;
+        width: 100%;
+    }
+
+    .contacts__item,
+    .contacts__item:nth-child(2n) {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .contacts__item:nth-child(2) {
+        margin-top: 26px;
+    }
+
+    .contacts__item--whats-app {
+        transform: translate(-4px, 0);
     }
 }

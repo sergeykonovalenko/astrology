@@ -1,5 +1,6 @@
 .social-mobile {
     @include reset-list;
+
     display: none;
     justify-content: center;
     align-items: center;
@@ -7,10 +8,10 @@
 
 .social-mobile__item {
     margin-right: 5px;
-}
 
-.social-mobile__item:last-child {
-    margin-right: 0;
+    &:last-child {
+        margin-right: 0;
+    }
 }
 
 .social-mobile__link {

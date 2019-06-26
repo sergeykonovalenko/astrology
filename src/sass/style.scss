@@ -1,3 +1,9 @@
+/*
+Theme Name: Astro-ocean
+Author: Sergey Konovalenko
+Author URI: https://freelance.ru/sergeykonovalenko
+*/
+
 /* ==========================================================================
    FONTS
    ========================================================================== */
@@ -26,5 +32,14 @@
 @import "blocks/contacts";
 @import "blocks/bottom-contacts";
 @import "blocks/main-footer";
+/* Modal order
+   ========================================================================== */
 @import "blocks/modal-order";
+@import "blocks/close";
 @import "blocks/error";
+/* Loader
+   ========================================================================== */
+@import "blocks/loader";
+/* Modal thanks
+   ========================================================================== */
+@import "blocks/modal-thanks";

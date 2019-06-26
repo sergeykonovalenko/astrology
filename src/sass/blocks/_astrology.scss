@@ -76,24 +76,24 @@
 @media screen and (max-width: 1260px) {
     .astrology {
         background-position-x: calc(50% - 560px);
-    }
 
-    .astrology::after {
-        right: -145px;
+        &::after {
+            right: -145px;
+        }
     }
 }
 
 @media screen and (max-width: 992px) {
     .astrology {
         background-position: center calc(50% + 18px);
-    }
 
-    .astrology::after {
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(255, 255, 255, 0.75);
+        &:after {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.75);
+        }
     }
 
     .no-js .astrology::after,

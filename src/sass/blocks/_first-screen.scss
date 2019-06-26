@@ -4,8 +4,11 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-attachment: fixed;
     overflow-x: hidden;
+}
+
+body:not(.is-mobile) .first-screen {
+    background-attachment: fixed;
 }
 
 .no-js .first-screen,

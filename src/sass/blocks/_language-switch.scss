@@ -1,5 +1,6 @@
 .language-switch {
     @include reset-list;
+
     position: relative;
     display: flex;
     justify-content: center;
@@ -18,29 +19,34 @@
 .language-switch .menu-item-has-children {
     display: flex;
     align-items: center;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 17px;
+        height: 10px;
+        background: url("img/base/angle-down-light.svg") no-repeat 0 0;
+        background-size: cover;
+    }
 }
 
 .language-switch .menu-item-has-children > a {
     margin-right: 14px;
-}
 
-.language-switch .menu-item-has-children > a:hover {
-    text-decoration: none;
-}
+    &:hover {
+        text-decoration: none;
+    }
 
-.language-switch .menu-item-has-children::after {
-    content: "";
-    display: block;
-    width: 17px;
-    height: 10px;
-    background: url("img/base/angle-down-light.svg") no-repeat 0 0;
-    background-size: cover;
+    & img {
+        display: none;
+    }
 }
 
 .language-switch .sub-menu {
     @include reset-list;
+
     position: absolute;
-    z-index: 3;
+    z-index: 5;
     top: calc(100% - 3px);
     right: 0;
     left: 0;
@@ -54,7 +60,8 @@
     transition: margin 0.15s, opacity 0.15s;
 }
 
-body:not(.is-mobile) .language-switch:hover .sub-menu {
+body:not(.is-mobile) .language-switch:hover .sub-menu,
+.language-switch--open .sub-menu {
     margin-top: 0;
     opacity: 1;
     visibility: visible;
@@ -68,33 +75,45 @@ body:not(.is-mobile) .language-switch:hover .sub-menu {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 7px 0;
     transition: all 0.3s ease;
     cursor: pointer;
-}
 
-.lang-item a:hover,
-.lang-item a:focus {
-    text-decoration: none;
-    color: #c3a660;
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: #c3a660;
+    }
 }
 
 .lang-item:first-child a {
     padding-top: 16px;
-    padding-bottom: 7px;
 }
 
 .lang-item:last-child a {
-    padding-top: 6px;
     padding-bottom: 20px;
+}
+
+.current-lang a {
+    color: #d1b264;
 }
 
 @media screen and (max-width: 1260px) {
     .language-switch {
         height: 50px;
     }
+
+    .language-switch .sub-menu {
+        top: 100%;
+        margin-top: 0;
+        padding-top: 0;
+        background-color: rgba(5, 5, 5, 0.9);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+    }
 }
 
-@media screen and (max-width: 576px) {
+
+@media screen and (max-width: 360px) {
     .language-switch {
         width: 90px;
     }

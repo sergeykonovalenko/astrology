@@ -4,7 +4,22 @@ $(document).ready(function () {
     const is_mobile = isMobile();
 
     if (is_mobile) {
-        document.querySelector("body").classList.add('is-mobile');
+        document.querySelector('body').classList.add('is-mobile');
+
+        // language-switch show/hide
+        let languageSwitch = $('.language-switch');
+
+        languageSwitch.on('click', function () {
+            $(this).toggleClass('language-switch--open');
+        });
+
+        $(document).click(function(event) {
+            let $target = $(event.target);
+            if(!$target.closest('.language-switch').length &&
+                languageSwitch.is(":visible")) {
+                languageSwitch.removeClass('language-switch--open');
+            }
+        });
     }
 
     // show/hide mobile menu
@@ -24,8 +39,8 @@ $(document).ready(function () {
         return false;
     });
 
-    // parallax
     if (!is_mobile) {
+        // parallax bg
         let $window = $(window);
 
         $('[data-type="background"]').each(function() {
@@ -38,52 +53,48 @@ $(document).ready(function () {
                 $bgobj.css({ backgroundPosition: coords });
             });
         });
-    }
 
-    // parallax astrology
-    let astrology = document.querySelector('.offer-index__astrology');
-    let parallaxAstrology = new Parallax(astrology, {
-        limitY: 0,
-        invertX: false
-    });
-
-    // parallax clouds
-    let clouds = document.querySelectorAll('.clouds');
-    clouds.forEach(function (cloudsItem) {
-        let parallaxClouds = new Parallax(cloudsItem, {
+        // parallax astrology
+        let astrology = document.querySelector('.offer-index__astrology');
+        let parallaxAstrology = new Parallax(astrology, {
             limitY: 0,
+            invertX: false
         });
-    });
 
-    // parallax about stars
-    let aboutStars = document.querySelector('.about__stars-box');
-    let parallaxAboutStars = new Parallax(aboutStars, {
-        limitX: 190,
-        invertX: false
-    });
+        // parallax clouds
+        let clouds = document.querySelectorAll('.clouds');
+        clouds.forEach(function (cloudsItem) {
+            let parallaxClouds = new Parallax(cloudsItem, {
+                limitY: 0,
+            });
+        });
 
-    // parallax contacts cloud
-    let contactsCloud = document.querySelector('.contacts__cloud-box');
-    let parallaxContactsCloud = new Parallax(contactsCloud, {
-    });
+        // parallax about stars
+        let aboutStars = document.querySelector('.about__stars-box');
+        let parallaxAboutStars = new Parallax(aboutStars, {
+            limitX: 190,
+            invertX: false
+        });
 
-    // parallax contacts stars
-    let contactsStars = document.querySelector('.contacts__stars-box');
-    let parallaxContactsStars = new Parallax(contactsStars, {
-        invertX: false
-    });
+        // parallax contacts cloud
+        let contactsCloud = document.querySelector('.contacts__cloud-box');
+        let parallaxContactsCloud = new Parallax(contactsCloud, {
+        });
 
-    // parallax contacts space
-    let limitX = (window.innerWidth > 1800) ? 30 : false;
-    let contactsSpace = document.querySelector('.contacts__space-box');
-    let parallaxContactsSpace = new Parallax(contactsSpace, {
-        limitX: limitX,
-        invertX: false
-    });
+        // parallax contacts stars
+        let contactsStars = document.querySelector('.contacts__stars-box');
+        let parallaxContactsStars = new Parallax(contactsStars, {
+            invertX: false
+        });
 
-    // masked input
-    $('input[type="tel"]').mask('+44 (0) 99-9999-99-99');
-
+        // parallax contacts space
+        let limitX = (window.innerWidth > 1800) ? 30 : false;
+        let contactsSpace = document.querySelector('.contacts__space-box');
+        let parallaxContactsSpace = new Parallax(contactsSpace, {
+            limitX: limitX,
+            invertX: false
+        });
+    }
 
     // modal
     let modalOrder = $('.modal-order');
@@ -126,26 +137,25 @@ $(document).ready(function () {
             },
             messages:{
                 name:{
-                    required:'Заполните поле'
+                    required: validationForm['form_valid_required']
                 },
                 email:{
-                    required:'Заполните поле',
-                    email:'Неправильный формат email'
+                    required: validationForm['form_valid_required'],
+                    email: validationForm['form_valid_wrong_email']
                 },
                 phone:{
-                    required:'Заполните поле',
-                    regex:'Неправильный формат телефона'
+                    required: validationForm['form_valid_required'],
+                    regex: 'Неправильный формат телефона'
                 }
             },
             submitHandler: function (form) {
                 $('.modal-order').modal('hide');
                 $('.loader').fadeIn();
                 let $form = $(form);
-                let $formId = $(form).attr('data-id');
 
                 $.ajax({
                     type: 'POST',
-                    url: $form.attr('action'),
+                    url: templateUrl + '/' + $form.attr('action'),
                     data: $form.serialize(),
                 })
                     .always(function (response) {
@@ -154,8 +164,6 @@ $(document).ready(function () {
                         },800);
                         setTimeout(function () {
                             $('.modal-thanks').modal('show');
-                            $( 'input:not([type="hidden"]), textarea' ).val('');
-                            $('.form-extra__item').removeClass('form-extra__item--should-float');
                         },1100);
                     });
 

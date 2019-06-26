@@ -44,6 +44,10 @@
     opacity: 0.1;
 }
 
+.offer-index__astrology img {
+    max-width: inherit;
+}
+
 @media screen and (max-width: 1260px) {
     .offer-index__astrology {
         right: -90px;
@@ -65,5 +69,28 @@
 
     .offer-index__astrology img {
         width: 510px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .offer-index__astrology {
+        bottom: 135px;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .offer-index__astrology {
+        right: auto;
+        left: 50px;
+    }
+
+    .offer-index__astrology img {
+        width: 430px;
+    }
+}
+
+@media screen and (max-width: 388px) {
+    .offer-index__button {
+        min-width: 290px;
     }
 }
